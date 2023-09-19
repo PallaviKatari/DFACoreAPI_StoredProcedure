@@ -1,4 +1,5 @@
-﻿namespace CoreAPI_SP.Models.DB
+﻿#nullable disable
+namespace CoreAPI_SP.Models.DB
 {
     public class Input
     {

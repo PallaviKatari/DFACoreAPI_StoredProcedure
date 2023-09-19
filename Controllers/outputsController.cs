@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CoreAPI_SP.Models.DB;
-
+#nullable disable
 namespace CoreAPI_SP.Controllers
 {
     [Route("api/[controller]")]
@@ -22,7 +22,7 @@ namespace CoreAPI_SP.Controllers
 
         // POST: api/outputs
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<output>>> Getoutput(Input input)
+        public async Task<ActionResult<IEnumerable<Output>>> Getoutput(Input input)
         {
             string StoredProc = "exec CreateAppointment " +
                     "@ClinicID = " + input.ClinicId + "," +
@@ -34,7 +34,7 @@ namespace CoreAPI_SP.Controllers
                     "@AppointmentEndTime= '" + input.AppointmentEndTime + "'";
 
             //return await _context.output.ToListAsync();
-            return await _context.output.FromSqlRaw(StoredProc).ToListAsync();
+            return await _context.Output.FromSqlRaw(StoredProc).ToListAsync();
         }
     }
 }

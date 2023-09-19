@@ -2,7 +2,7 @@
 #nullable disable
 namespace CoreAPI_SP.Models.DB
 {
-    public partial class output
+    public partial class Output
     {
         [Key]
         public int AppointmentId { get; set; }
